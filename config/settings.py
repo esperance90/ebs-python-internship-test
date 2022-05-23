@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from datetime import timedelta
 
 from django.utils.translation import gettext_lazy as _
 
@@ -100,6 +101,11 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     ),
     'EXCEPTION_HANDLER': 'apps.common.exceptions.custom_exception_handler'
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=8),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
 SWAGGER_SETTINGS = {

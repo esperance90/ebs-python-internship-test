@@ -22,7 +22,7 @@ schema_view = get_schema_view(
         default_version='v1',
         description="Enjoy",
     ),
-    validators=['ssv'],
+    validators=[],
     public=True,
     permission_classes=(AllowAny,)
 )
