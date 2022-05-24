@@ -16,7 +16,15 @@ class Blog(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     enabled = models.BooleanField(default=True)
 
+    def __str__(self):
+        if self.enabled:
+            status_string = 'enabled'
+        else:
+            status_string = 'disabled'
 
-class Comments(models.Model):
+        return self.title + ' : ' + status_string
+
+
+class Comment(models.Model):
     body = models.TextField()
     blog = models.ForeignKey(Blog, related_name='comments', on_delete=models.CASCADE)

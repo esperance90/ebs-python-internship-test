@@ -11,6 +11,6 @@ urlpatterns = router.urls
 urlpatterns += [
     path('blog/', BlogListView.as_view(), name='blog_list'),
     path('blog/<int:pk>/', BlogItemView.as_view(), name='blog_item'),
-    path('blog_create/', CreateBlogView.as_view(), name='blog_create'),
-    path('comment_add/', AddCommentsView.as_view(), name='comment_add')
+    path('blog/create', CreateBlogView.as_view(), name='blog_create'),
+    path('comment/add', AddCommentsView.as_view(), name='comment_add')
 ]
